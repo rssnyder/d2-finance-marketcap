@@ -1,5 +1,5 @@
 FROM golang:1.18-alpine
-LABEL org.opencontainers.image.source https://github.com/rssnyder/discord-bot
+LABEL org.opencontainers.image.source https://github.com/rssnyder/discord-d2-finance-marketcap
 
 WORKDIR /app
 
@@ -9,6 +9,6 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN go build -o /discord-bot
+RUN go build -o /discord-d2-finance-marketcap
 
-ENTRYPOINT /discord-bot -token "$TOKEN" -nickname "$NICKNAME" -activity "$ACTIVITY" -status "$STATUS" -refresh "$REFRESH"
+ENTRYPOINT /discord-d2-finance-marketcap -token "$TOKEN" -nickname "$NICKNAME" -activity "$ACTIVITY" -status "$STATUS" -refresh "$REFRESH"
